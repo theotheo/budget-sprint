@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7]><html class="iem7"  lang="ru" dir="ltr"><![endif]-->
+<!--[if lte IE 6]><html class="lt-ie9 lt-ie8 lt-ie7"  lang="ru" dir="ltr"><![endif]-->
+<!--[if (IE 7)&(!IEMobile)]><html class="lt-ie9 lt-ie8"  lang="ru" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9"  lang="ru" dir="ltr"><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!-->
+<html  lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#">
+<!--<![endif]-->
+
+<head>
+  <title>Импорт/экспорт с Бермуда алкоголя</title>  
+  <meta charset="utf-8" />
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="cleartype" content="on">
+  
+	<style>
+	@import url("./css/map.css");
+	</style>
+  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="./js/d3.js"></script>
+	<script src="./js/queue.v1.min.js"></script>
+	<script src="./js/topojson.js"></script>
+</head>
+<body class="html" >
+  <div class="section">
+		<div id="d3-map" class="d3-map-container"></div>
+		<div class="d3-legend-map-container-wrapper">
+		  <div>Импорт/экспорт</div>
+ <div class="select-mode">
+        <select id="select-mode">
+          <option value="false">Импорт</option>
+          <option value="true">Экспорт</option>
+        </select> 
+      </div>
+<!--       <div>Select district of displaying</div>
+      <div class="select-district">
+        <select id="select-district">
+          <option value="ALL">All</option>
+          <option value="CENTR">Central</option>
+          <option value="KRIM">Crimean</option>
+          <option value="NORDKA">North Caucasian</option>
+          <option value="NORDWE">Northwestern</option>
+          <option value="OST">Far Eastern</option>
+          <option value="PRIVOL">Volga</option>
+          <option value="SIB">Siberian</option>
+          <option value="SOUTH">Southern</option>
+          <option value="URAL">Ural</option>
+        </select>
+      </div> -->
+		  <div>Выберите год</div>
+		  <div class="select-year">
+		    <select id="select-year">
+		      <option value="2013">2013</option>
+		      <option value="2014">2014</option>
+          <option value="2015">2015</option>
+          <option value="2016">2016</option>
+		    </select>
+		  </div>
+		  <div>Легенда</div>
+		  <div id="d3-legend-map" class="d3-legend-map-container"></div>
+		</div>
+  </div>
+  <script src="./js/run_map.js"></script>
+</body>
+</html>
