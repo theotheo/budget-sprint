@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+</style>
+<title>Страны по объёмам поставки алкоголя в Россию</title>
+
+<script src="http://d3js.org/d3.v4.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+
+<link href="d3-geomap/css/d3.geomap.css" rel="stylesheet">
+<script src="d3-geomap/vendor/d3.geomap.dependencies.min.js"></script>
+<script src="d3-geomap/js/d3.geomap.min.js"></script>
+<script src="colorbrewer.min.js"></script>
+
+<body>
+
+<div id="map"></div>
+</body>
+
+<script>
+
+
+var format = function(d) {
+    d = d / 1000000;
+    return d3.format(',.02f')(d) + 'M';
+}
+
+// var map = d3.geomap()
+//     .geofile('d3-geomap/topojson/world/countries.json');
+
+
+// d3.select('#map')
+//     .call(map.draw, map);
+
+var map = d3.geomap.choropleth()
+    .geofile('d3-geomap/topojson/world/countries.json')
+    .colors(colorbrewer.YlOrRd[9])
+    .column('STOIM')
+    .format(format)
+    .legend(true)
+    .unitId('alpha3');
+
+d3.csv('49.csv', function(error, data) {
+    d3.select('#map')
+        .datum(data)
+        .call(map.draw, map);
+});
+
+</script>
+</html>
